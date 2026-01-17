@@ -1,12 +1,17 @@
 package com.torres.project.entities;
 
+import jakarta.persistence.*;
 import java.io.Serializable;
 import java.util.Objects;
 
+@Entity
+@Table(name = "tb_user")
 public class User implements Serializable {
 
     private static final long seriaVersionUID = 1L;
 
+    @Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY )
     private Long id;
     private String nome;
     private String email;
