@@ -2,9 +2,7 @@ package com.torres.project.entities;
 
 import com.fasterxml.jackson.annotation.JsonIgnore;
 import com.torres.project.entities.pk.OrderItemPK;
-import jakarta.persistence.EmbeddedId;
-import jakarta.persistence.Entity;
-import jakarta.persistence.Table;
+import jakarta.persistence.*;
 
 import java.io.Serializable;
 import java.util.Objects;
@@ -61,6 +59,10 @@ public class OrderItem implements Serializable {
 
     public void setPrice(double price) {
         this.price = price;
+    }
+
+    public Double getSubTotal(){
+        return price * quantity;
     }
 
     @Override
